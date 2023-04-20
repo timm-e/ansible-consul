@@ -267,3 +267,5 @@ consul_limits: {}
 # files clean up
 consul_cleanup_ignore_files:
   - '{{ consul_configd_path }}/consul.env'
+
+consul_prometheus_retention_time: 24h

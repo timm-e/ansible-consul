@@ -354,4 +354,7 @@
     {% else %}
     "ui": {{ consul_ui | bool | to_json }}
     {% endif %}
+    "telemetry": {
+        "prometheus_retention_time": "{{ consul_prometheus_retention_time }}""
+    }
 }
