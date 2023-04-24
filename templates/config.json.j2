@@ -350,12 +350,12 @@
     {% if consul_version is version_compare('1.9.0', '>=') %}
     "ui_config": {
         "enabled": {{ consul_ui | bool | to_json }}
-    }
+    },
     {% else %}
-    "ui": {{ consul_ui | bool | to_json }}
+    "ui": {{ consul_ui | bool | to_json }},
     {% endif %}
     "telemetry": {
-        "prometheus_retention_time": "{{ consul_prometheus_retention_time }}"
-        "disable_hostname": "{{ consul_prometheus_disable_hostname }}"
+        "prometheus_retention_time": "{{ consul_prometheus_retention_time }}",
+        "disable_hostname": {{ consul_prometheus_disable_hostname | bool | to_json }}
     }
 }
